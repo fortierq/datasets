@@ -63,4 +63,4 @@ with (DIR / "concours.sql").open("w") as f:
     for e in epreuves:
         f.write(f"INSERT INTO 'epreuve' ({tuple_str(e.fields())}) VALUES ({tuple_str(e)});\n")
         for matiere in e.matieres:
-            f.write(f"INSERT INTO 'epreuve_matiere' VALUES ('{e.id}', '{matiere}');\n")
+            f.write(f"INSERT INTO 'epreuve_matiere' VALUES ({e.id}, '{matiere}');\n")
