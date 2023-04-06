@@ -40,9 +40,7 @@ def tuple_str(t):
 with (DIR / "concours.sql").open("w") as f:
     with (DIR / "concours_table.sql").open("r") as g:
         f.write(g.read())
-    epreuve_id = 0
     for e in epreuves:
         f.write(f"INSERT INTO 'epreuve' ({tuple_str(e.fields())}) VALUES ({tuple_str(e)});\n")
         for matiere in e.matieres:
-            f.write(f"INSERT INTO 'epreuve_matiere' VALUES ('{epreuve_id}', '{matiere}');\n")
-        epreuve_id += 1
+            f.write(f"INSERT INTO 'epreuve_matiere' VALUES ('{e.id}', '{matiere}');\n")
