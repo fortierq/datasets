@@ -5,6 +5,22 @@ from pathlib import Path
 DIR = Path(__file__).parent
 
 @dataclass
+class Concours:
+    id: int = field(default_factory=count().__next__, init=False)
+    nom: str
+    filiere: str
+    inscrit: int
+
+    def fields(self):
+        return ("id", "nom", "filiere", "inscrit")
+
+    def __iter__(self):
+        return iter((self.id, self.nom, self.filiere, self.inscrit))
+
+concours = {}
+concours["ccinp"] = Concours(nom="ccinp", filiere="mp", inscrit=7872)
+
+@dataclass
 class Epreuve:
     id: int = field(default_factory=count().__next__, init=False)
     nom: str
@@ -14,10 +30,12 @@ class Epreuve:
     matieres: list[str]
     oral: bool = False
     preparation: float = 0.0
+
     def fields(self):
-        return ("id", "nom", "duree", "concours_nom", "coefficient", "oral", "preparation")
+        return ("id", "nom", "duree", "concours_id", "coefficient", "oral", "preparation")
+    
     def __iter__(self):
-        return iter((self.id, self.nom, self.duree, self.concours_nom, self.coefficient, self.oral, self.preparation))
+        return iter((self.id, self.nom, self.duree, concours[self.concours_nom].id, self.coefficient, self.oral, self.preparation))
 
 epreuves = [
     Epreuve(nom="mathématiques 1", duree=4, concours_nom="ccinp", coefficient=12.0, matieres=["mathématiques"]),
@@ -40,6 +58,8 @@ def tuple_str(t):
 with (DIR / "concours.sql").open("w") as f:
     with (DIR / "concours_table.sql").open("r") as g:
         f.write(g.read())
+    for c in concours.values():
+        f.write(f"INSERT INTO 'concours' VALUES ({tuple_str(c)});\n")
     for e in epreuves:
         f.write(f"INSERT INTO 'epreuve' ({tuple_str(e.fields())}) VALUES ({tuple_str(e)});\n")
         for matiere in e.matieres:

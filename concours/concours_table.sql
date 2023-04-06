@@ -27,7 +27,7 @@ CREATE TABLE "epreuve" (
     "id" INTEGER PRIMARY KEY,
     "nom" varchar(255) NOT NULL,
     "duree" float NOT NULL,
-    "concours_nom" varchar(255) NOT NULL,
+    "concours_id" varchar(255) NOT NULL,
     "coefficient" float NOT NULL,
     "oral" boolean NOT NULL,
     "preparation" float
@@ -35,7 +35,7 @@ CREATE TABLE "epreuve" (
 
 DROP TABLE IF EXISTS "epreuve_matiere";
 CREATE TABLE "epreuve_matiere" (
-    "epreuve_nom" varchar(255) NOT NULL,
+    "epreuve_id" INTEGER,
     "matiere" varchar(255) NOT NULL
 );
 
