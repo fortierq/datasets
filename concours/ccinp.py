@@ -20,7 +20,7 @@ epreuves += [
     Epreuve(nom="langue vivante b", duree=1, concours=concours[-1],
             coefficient=2.0, matieres=["langue vivante b"]),
     Epreuve(nom="informatique ou sciences industrielles", duree=4, concours=concours[-1],
-            coefficient=7.0, matieres=["informatique", "sciences industrielles"]),
+            coefficient=7.0, matieres=["option info/si"]),
     Epreuve(nom="mathématiques", duree=.5, concours=concours[-1], coefficient=14.0,
             matieres=["mathématiques"], oral=True, preparation=.5),
     Epreuve(nom="physique-chimie", duree=.5, concours=concours[-1], coefficient=12.0,
