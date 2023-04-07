@@ -44,7 +44,7 @@ CREATE TABLE "ecole" ("nom" varchar(255), "ville" varchar(255));INSERT INTO 'con
 INSERT INTO 'concours' VALUES (1, 'ccinp', 'pc', 4685);
 INSERT INTO 'concours' VALUES (2, 'ccinp', 'mpi', 0);
 INSERT INTO 'concours' VALUES (3, 'cmp', 'mp', 7872);
-INSERT INTO 'concours' VALUES (4, 'ccmp', 'mpi', 0);
+INSERT INTO 'concours' VALUES (4, 'cmp', 'mpi', 0);
 INSERT INTO 'epreuve' ('id', 'nom', 'duree', 'concours_id', 'coefficient', 'oral', 'preparation') VALUES (0, 'mathématiques 1', 4, 0, 12.0, False, 0.0);
 INSERT INTO 'epreuve_matiere' VALUES (0, 'mathématiques');
 INSERT INTO 'epreuve' ('id', 'nom', 'duree', 'concours_id', 'coefficient', 'oral', 'preparation') VALUES (1, 'mathématiques 2', 4, 0, 12.0, False, 0.0);
