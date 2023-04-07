@@ -24,7 +24,7 @@ epreuves += [
             coefficient=2.0, matieres=["informatique"]),
 ]
 
-concours.append(Concours(nom="ccmp", filiere="mpi", inscrit=0))
+concours.append(Concours(nom="cmp", filiere="mpi", inscrit=0))
 epreuves += [
     Epreuve(nom="mathématiques 1", duree=3, concours=concours[-1],
             coefficient=4.0, matieres=["mathématiques"]),
