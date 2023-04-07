@@ -1,9 +1,7 @@
 from pathlib import Path
-import ccinp
+from banques.banques import concours, epreuves
 
 DIR = Path(__file__).parent
-concours = ccinp.concours
-epreuves = ccinp.epreuves
 
 def tuple_str(t):
     return ', '.join(f"'{w}'" if isinstance(w, str) else str(w) for w in t)

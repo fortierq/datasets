@@ -1,5 +1,4 @@
 from classes import Concours, Epreuve
-from copy import deepcopy
 
 epreuves, concours = [], []
 
