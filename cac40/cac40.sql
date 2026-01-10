@@ -1,8 +1,3 @@
--- Données du CAC 40 (2015-2024)
--- chiffre_affaires, benefice, dette, capitalisation, capitaux_propres : en millions d'euros
--- dividende : rendement en pourcentage
--- employes : nombre d'employés
-
 DROP TABLE IF EXISTS finances;
 DROP TABLE IF EXISTS entreprises;
 
@@ -26,7 +21,6 @@ CREATE TABLE finances (
     FOREIGN KEY (entreprise_id) REFERENCES entreprises(id)
 );
 
--- Insertion des 40 entreprises du CAC 40
 INSERT INTO entreprises (id, nom, secteur, employes) VALUES
 (1, 'Air Liquide', 'Chimie', 67100),
 (2, 'Airbus', 'Aéronautique', 134000),
@@ -69,7 +63,6 @@ INSERT INTO entreprises (id, nom, secteur, employes) VALUES
 (39, 'Vinci', 'BTP', 272000),
 (40, 'Vivendi', 'Médias', 36000);
 
--- Données financières 2015
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2015, 16380, 1756, 6234, 2.45, 32500, 12456),
 (2, 2015, 64450, 2696, 8765, 1.23, 45600, 6789),
@@ -112,7 +105,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2015, 38518, 2046, 12345, 2.89, 39800, 16789),
 (40, 2015, 10762, 1932, 2345, 4.12, 26700, 21234);
 
--- Données financières 2016
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2016, 18135, 1844, 6789, 2.34, 38900, 13456),
 (2, 2016, 66581, 995, 9234, 1.12, 48700, 7234),
@@ -155,7 +147,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2016, 38073, 2505, 13456, 2.78, 42300, 17987),
 (40, 2016, 10819, 1256, 2567, 4.01, 22300, 22456);
 
--- Données financières 2017
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2017, 20349, 2020, 7234, 2.23, 45600, 14567),
 (2, 2017, 66767, 2873, 8567, 1.34, 62300, 8765),
@@ -198,7 +189,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2017, 40248, 2747, 14567, 2.67, 48700, 19234),
 (40, 2017, 12340, 1216, 2789, 3.89, 24500, 23456);
 
--- Données financières 2018
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2018, 21011, 2113, 7567, 2.12, 48700, 15234),
 (2, 2018, 63707, 3054, 9123, 1.23, 68900, 9876),
@@ -241,7 +231,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2018, 43519, 2983, 15678, 2.56, 52300, 20567),
 (40, 2018, 13932, 175, 3012, 3.78, 22300, 24234);
 
--- Données financières 2019
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2019, 21920, 2242, 7876, 2.01, 58900, 15876),
 (2, 2019, 70478, 6946, 8876, 1.12, 98700, 11234),
@@ -284,7 +273,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2019, 48053, 3260, 16789, 2.45, 62300, 21876),
 (40, 2019, 15898, 1583, 3234, 3.67, 28900, 25123);
 
--- Données financières 2020
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2020, 20485, 2435, 8234, 1.89, 55600, 15987),
 (2, 2020, 49912, -1133, 12567, 0.0, 68900, 7896),
@@ -327,7 +315,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2020, 43234, 2466, 17234, 2.12, 52300, 19876),
 (40, 2020, 16090, 1440, 3456, 3.45, 25600, 23456);
 
--- Données financières 2021
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2021, 23334, 2572, 8567, 1.78, 68900, 17654),
 (2, 2021, 52149, 4213, 11234, 1.23, 85600, 11234),
@@ -370,7 +357,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2021, 49398, 2576, 16789, 2.34, 62300, 21456),
 (40, 2021, 9565, 708, 3678, 3.56, 22300, 24567);
 
--- Données financières 2022
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2022, 29934, 2759, 9234, 1.89, 72300, 19876),
 (2, 2022, 58763, 4247, 10567, 1.45, 92300, 14567),
@@ -413,7 +399,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2022, 61675, 4260, 16234, 2.56, 72300, 24567),
 (40, 2022, 9595, 1012, 3876, 3.78, 18900, 25678);
 
--- Données financières 2023
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2023, 27612, 3078, 9876, 2.03, 80655, 21234),
 (2, 2023, 65446, 4609, 24567, 1.67, 98791, 18765),
@@ -456,7 +441,6 @@ INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, d
 (39, 2023, 68838, 4737, 20123, 3.78, 68000, 27654),
 (40, 2023, 10510, 324, 4567, 1.89, 10500, 26789);
 
--- Données financières 2024
 INSERT INTO finances (entreprise_id, annee, chiffre_affaires, benefice, dette, dividende, capitalisation, capitaux_propres) VALUES
 (1, 2024, 29100, 3245, 9567, 2.15, 85600, 22345),
 (2, 2024, 69234, 5234, 22345, 1.78, 105600, 21234),
